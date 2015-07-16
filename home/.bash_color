@@ -1,0 +1,19 @@
+# colorful bash prompt as:
+# (username@hostname:)[red] (~$ /home/username/)[blue] (comand line)[green]
+
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[11;31m\]\u@\h:\w\$ \[\033[32;01m\]'
+else
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[11;31m\]\u@\h: \[\033[34;01m\]\w\$ \[\033[32;01m\]'
+#   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ ' ###原始系统的提示
+#   PS1='${debian_chroot:+($debian_chroot)}\[\033[33;40m\]\u\[\033[01;31m\]@\h:\[\033[01;34m\] \w \$'
+#\[\e[32;40m\] ###绿色参数
+fi
+
+## Oracle client 64
+export ORACLE_HOME=/usr/lib/oracle/11.2/client64
+export PATH=$PATH:$ORACLE_HOME/bin
+
+## Print datetime: $ $now
+now='date --rfc-3339=seconds'
