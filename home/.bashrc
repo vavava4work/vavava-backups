@@ -120,4 +120,6 @@ fi
 PATH="$HOME/bin:$PATH"
 
 # for autojump
- /usr/share/autojump/autojump.bash
+if [ -f /usr/share/autojump/autojump.bash ]; then
+    . /usr/share/autojump/autojump.bash
+fi
